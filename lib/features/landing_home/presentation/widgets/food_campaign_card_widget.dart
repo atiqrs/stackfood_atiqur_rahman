@@ -112,7 +112,7 @@ class FoodCampaignCard extends StatelessWidget {
                     child: IconButton(
                       icon: const Icon(
                         Icons.add,
-                        color: primaryColor,
+                        color: secondaryMainTextColor,
                         size: 40,
                       ),
                       onPressed: () {
