@@ -2,6 +2,7 @@ import 'package:atiqur_rahman/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/banner_scrolled_widget.dart';
+import '../widgets/categories_item_scrolled_widget.dart';
 
 class LandingHomePage extends StatefulWidget {
   const LandingHomePage({Key? key}) : super(key: key);
@@ -22,6 +23,7 @@ class _LandingHomePageState extends State<LandingHomePage> {
   final String restaurentsText = 'Restaurents';
 
   final List<String> restaurentsFilterTextList = ['All', 'Take Away', 'Home Delivery'];
+  final List<String> categoriesTextList = ['All', 'Coffee', 'Drink', 'Fast Food', 'Cake', 'Shusi'];
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class _LandingHomePageState extends State<LandingHomePage> {
               mainAxisAlignment: MainAxisAlignment.start,
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: size.width * 0.05),
+                SizedBox(height: size.width * 0.04),
 
                 // adress & notificaion
                 Padding(
@@ -70,7 +72,7 @@ class _LandingHomePageState extends State<LandingHomePage> {
                     ],
                   ),
                 ),
-                SizedBox(height: size.width * 0.03),
+                SizedBox(height: size.width * 0.02),
 
                 // search
                 Padding(
@@ -94,7 +96,7 @@ class _LandingHomePageState extends State<LandingHomePage> {
                     ),
                   ),
                 ),
-                SizedBox(height: size.width * 0.03),
+                SizedBox(height: size.width * 0.02),
 
                 // banner
                 SingleChildScrollView(
@@ -110,8 +112,42 @@ class _LandingHomePageState extends State<LandingHomePage> {
                     ],
                   ),
                 ),
+                SizedBox(height: size.width * 0.02),
 
-                //
+                // Categories
+                Padding(
+                  padding: commonPadding,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(categoriesText, style: mainTextStyle),
+                          Text(viewAllText, style: primaryTextStyle),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // scroller item
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: <Widget>[
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      for (var item in categoriesTextList)
+                        CategoriesScrolledItem(
+                          scrollerPadding: scrollerPadding,
+                          categoriesText: item,
+                          secondaryMainTextStyle: secondaryMainTextStyle,
+                        )
+                    ],
+                  ),
+                ),
+                SizedBox(height: size.width * 0.02),
               ],
             ),
           ),
