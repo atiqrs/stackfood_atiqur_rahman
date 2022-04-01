@@ -13,6 +13,9 @@ const secondaryMainTextColor = Color.fromARGB(221, 15, 15, 120);
 
 const backgroundColor = Color.fromARGB(10, 158, 158, 158);
 
+const redColor = Color.fromARGB(255, 245, 3, 3);
+const greenColor = Color.fromARGB(255, 0, 184, 15);
+
 const mainTextStyle = TextStyle(
     color: mainTextColor,
     fontStyle: FontStyle.normal,
@@ -27,12 +30,41 @@ const secondaryMainTextStyle = TextStyle(
     fontSize: 18,
     letterSpacing: 0.15);
 
+const currentPriceTextStyle = TextStyle(
+    color: secondaryMainTextColor,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w500, //h1 - 400
+    fontSize: 18,
+    letterSpacing: 0.15);
+
+const oldPriceTextStyle = TextStyle(
+    color: lowSecondayColor,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w500, //h1 - 400
+    fontSize: 18,
+    letterSpacing: 0.15,
+    decoration: TextDecoration.lineThrough);
+
 const brandTextStyle = TextStyle(
     color: secondayColor,
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.bold, //h1 - 400
     fontSize: 14,
     letterSpacing: 0.4);
+
+const secondaryBrandTextStyle = TextStyle(
+    color: secondayColor,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.bold, //h1 - 400
+    fontSize: 12,
+    letterSpacing: 0.1);
+
+const secondaryBrandLocationTextStyle = TextStyle(
+    color: secondayColor,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.normal, //h1 - 400
+    fontSize: 12,
+    letterSpacing: 0.1);
 
 const primaryTextStyle = TextStyle(
     color: primaryColor,

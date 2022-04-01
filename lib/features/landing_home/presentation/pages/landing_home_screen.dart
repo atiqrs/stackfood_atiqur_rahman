@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../widgets/banner_scrolled_widget.dart';
 import '../widgets/categories_item_scrolled_widget.dart';
-import '../widgets/daily_deal_card.dart';
+import '../widgets/food_campaign_card_widget.dart';
+import '../widgets/new_off_arrive_widget.dart';
 import '../widgets/popular_food_button_widget.dart';
+import '../widgets/ratings_show_widget.dart';
 
 class LandingHomePage extends StatefulWidget {
   const LandingHomePage({Key? key}) : super(key: key);
@@ -24,6 +26,14 @@ class _LandingHomePageState extends State<LandingHomePage> {
   final String foodCampaignText = 'Food Campaign';
   final String restaurentsText = 'Restaurents';
 
+  final bool upIndexValue = true;
+  final int rateValueOnPercentage = 30;
+
+  final String foodText = 'Burger';
+  final String adressText = 'New York, USA';
+  final double currentPrice = 5;
+  final double oldPrice = 10;
+
   final String brandText = 'Mc Donald';
   final double demoPrice = 7.56;
   final double demoRating = 4.9;
@@ -31,6 +41,8 @@ class _LandingHomePageState extends State<LandingHomePage> {
   final List<String> restaurentsFilterTextList = ['All', 'Take Away', 'Home Delivery'];
   final List<String> categoriesTextList = ['All', 'Coffee', 'Drink', 'Fast Food', 'Cake', 'Shusi'];
   final List<String> popularFoodTextList = ['Fried Noodles', 'Fried Noodles', 'Fried Noodles'];
+  final List<String> foodCampaignTextList = ['Burger', 'Burger', 'Burger'];
+  final List<int> ratings = [4, 4, 4];
 
   @override
   Widget build(BuildContext context) {
@@ -193,6 +205,44 @@ class _LandingHomePageState extends State<LandingHomePage> {
                 SizedBox(height: size.width * 0.03),
 
                 // Food Campaign
+                Padding(
+                  padding: commonPadding,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(foodCampaignText, style: mainTextStyle),
+                          Text(viewAllText, style: primaryTextStyle),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                // scroller item
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: width * .02,
+                      ),
+                      FoodCampaignCard(
+                        scrollerPadding: scrollerPadding,
+                        size: size,
+                        foodCampaignTextList: foodCampaignTextList,
+                        brandText: brandText,
+                        adressText: adressText,
+                        ratings: ratings,
+                        currentPrice: currentPrice,
+                        oldPrice: oldPrice,
+                        upIndexValue: upIndexValue,
+                        rateValueOnPercentage: rateValueOnPercentage,
+                      ),
+                    ],
+                  ),
+                ),
                 SizedBox(height: size.width * 0.03),
               ],
             ),
