@@ -1,6 +1,8 @@
 import 'package:atiqur_rahman/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/banner_scrolled_widget.dart';
+
 class LandingHomePage extends StatefulWidget {
   const LandingHomePage({Key? key}) : super(key: key);
   @override
@@ -21,8 +23,6 @@ class _LandingHomePageState extends State<LandingHomePage> {
 
   final List<String> restaurentsFilterTextList = ['All', 'Take Away', 'Home Delivery'];
 
-  // final String Text = 'View';
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -30,6 +30,7 @@ class _LandingHomePageState extends State<LandingHomePage> {
     double width = size.width;
 
     final EdgeInsets commonPadding = EdgeInsets.fromLTRB(width * 0.05, height * 0.01, width * 0.05, height * 0.01);
+    final EdgeInsets scrollerPadding = EdgeInsets.fromLTRB(width * 0.01, height * 0.01, width * 0.05, height * 0.01);
 
     return Scaffold(
       body: SafeArea(
@@ -96,10 +97,21 @@ class _LandingHomePageState extends State<LandingHomePage> {
                 SizedBox(height: size.width * 0.03),
 
                 // banner
-                Padding(
-                  padding: commonPadding,
-                  child: SizedBox(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: <Widget>[
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      BannerScrolledWidget(scrollerPadding: scrollerPadding),
+                      BannerScrolledWidget(scrollerPadding: scrollerPadding),
+                      BannerScrolledWidget(scrollerPadding: scrollerPadding),
+                    ],
+                  ),
                 ),
+
+                //
               ],
             ),
           ),
