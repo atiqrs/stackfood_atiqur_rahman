@@ -2,6 +2,7 @@ import 'package:atiqur_rahman/features/bookmark/presentation/pages/bookmark_scre
 import 'package:atiqur_rahman/features/cart/presentation/pages/cart_screen.dart';
 import 'package:atiqur_rahman/features/favourite/presentation/pages/favourite_screen.dart';
 import 'package:flutter/material.dart';
+import '../core/utils/constants.dart';
 import '../features/landing_home/presentation/pages/landing_home_screen.dart';
 import 'widget/nav_button.dart';
 import 'widget/drawer.dart';
@@ -64,12 +65,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   icon: Icon(
                     Icons.home_rounded,
-                    color: Colors.grey,
+                    color: secondayColor,
                     size: width * .1,
                   ),
                   selectedIcon: Icon(
                     Icons.home,
-                    color: Colors.orange,
+                    color: primaryColor,
                     size: width * .1,
                   )),
               // favorite
@@ -84,12 +85,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   icon: Icon(
                     Icons.favorite_rounded,
-                    color: Colors.grey,
+                    color: secondayColor,
                     size: width * .1,
                   ),
                   selectedIcon: Icon(
                     Icons.favorite_rounded,
-                    color: Colors.orange,
+                    color: primaryColor,
                     size: width * .1,
                   )),
               // cart
@@ -107,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         debugPrint('$_currentIndex');
                       });
                     },
-                    backgroundColor: Colors.orange,
+                    backgroundColor: primaryColor,
                     child: Icon(
                       Icons.shopping_cart,
                       color: Colors.white,
@@ -125,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         debugPrint('$_currentIndex');
                       });
                     },
-                    backgroundColor: Colors.orange,
+                    backgroundColor: primaryColor,
                     child: Icon(
                       Icons.shopping_cart,
                       color: Colors.white,
@@ -146,12 +147,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 icon: Icon(
                   Icons.bookmark_sharp,
-                  color: Colors.grey,
+                  color: secondayColor,
                   size: width * .1,
                 ),
                 selectedIcon: Icon(
                   Icons.bookmark_sharp,
-                  color: Colors.orange,
+                  color: primaryColor,
                   size: width * .1,
                 ),
               ),
@@ -162,12 +163,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTapFunc: () => _drawerKey.currentState?.openDrawer(),
                 icon: Icon(
                   Icons.dehaze_rounded,
-                  color: Colors.grey,
+                  color: secondayColor,
                   size: width * .1,
                 ),
                 selectedIcon: Icon(
                   Icons.dehaze_rounded,
-                  color: Colors.orange,
+                  color: primaryColor,
                   size: width * .1,
                 ),
               )
