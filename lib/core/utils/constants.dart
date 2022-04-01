@@ -27,6 +27,13 @@ const secondaryMainTextStyle = TextStyle(
     fontSize: 18,
     letterSpacing: 0.15);
 
+const brandTextStyle = TextStyle(
+    color: secondayColor,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.bold, //h1 - 400
+    fontSize: 14,
+    letterSpacing: 0.4);
+
 const primaryTextStyle = TextStyle(
     color: primaryColor,
     fontStyle: FontStyle.normal,
@@ -34,3 +41,11 @@ const primaryTextStyle = TextStyle(
     fontSize: 18,
     letterSpacing: 0.15,
     decoration: TextDecoration.underline);
+
+const ratingTextStyle = TextStyle(
+  color: primaryColor,
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.w500, //h1 - 400
+  fontSize: 18,
+  letterSpacing: 0.15,
+);
