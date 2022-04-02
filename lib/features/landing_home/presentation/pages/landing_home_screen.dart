@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../api/api_provider.dart';
 import '../../../home/data/datasources/api_urls.dart';
+import '../../data/datasources/api_urls.dart';
 import '../widgets/banner_scrolled_widget.dart';
 import '../widgets/categories_item_scrolled_widget.dart';
 import '../widgets/food_campaign_card_widget.dart';
 import '../widgets/popular_food_button_widget.dart';
 import '../widgets/ratings_show_widget.dart';
+import 'banner.dart';
 
 class LandingHomePage extends StatefulWidget {
   const LandingHomePage({Key? key}) : super(key: key);
@@ -125,28 +127,8 @@ class _LandingHomePageState extends State<LandingHomePage> {
                   ),
                 ),
                 SizedBox(height: size.width * 0.03),
-
                 // banner
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: <Widget>[
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          final response = await ApiProvider().getWithoutBearer(bannerApiUrl);
-                          // BannerResponse.fromJson(response);
-                          debugPrint(response.toString());
-                        },
-                        child: BannerScrolledWidget(scrollerPadding: scrollerPadding),
-                      ),
-                      BannerScrolledWidget(scrollerPadding: scrollerPadding),
-                      BannerScrolledWidget(scrollerPadding: scrollerPadding),
-                    ],
-                  ),
-                ),
+                const BannerSection(),
                 SizedBox(height: size.width * 0.03),
 
                 // Categories
