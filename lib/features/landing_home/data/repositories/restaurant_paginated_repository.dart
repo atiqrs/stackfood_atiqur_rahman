@@ -1,6 +1,5 @@
-import 'package:atiqur_rahman/features/home/data/datasources/api_urls.dart';
-
 import '../../../../api/api_provider.dart';
+import '../../../home/data/datasources/api_urls.dart';
 import '../models/restaurant_paginated_response.dart';
 
 class RestaurantPaginatedRepository {
