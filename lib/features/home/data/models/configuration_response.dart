@@ -137,7 +137,7 @@ class ConfigarationResponse {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['business_name'] = businessName;
     data['logo'] = logo;
     data['address'] = address;
@@ -237,7 +237,7 @@ class BaseUrls {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['product_image_url'] = productImageUrl;
     data['customer_image_url'] = customerImageUrl;
     data['banner_image_url'] = bannerImageUrl;
@@ -267,7 +267,7 @@ class DefaultLocation {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['lat'] = lat;
     data['lng'] = lng;
     return data;
@@ -286,7 +286,7 @@ class Language {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['key'] = key;
     data['value'] = value;
     return data;
