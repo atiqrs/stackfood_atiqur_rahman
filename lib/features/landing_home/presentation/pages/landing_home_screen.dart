@@ -1,6 +1,9 @@
 import 'package:atiqur_rahman/core/utils/constants.dart';
+import 'package:atiqur_rahman/features/landing_home/data/models/banner_response.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../api/api_provider.dart';
+import '../../../home/data/datasources/api_urls.dart';
 import '../widgets/banner_scrolled_widget.dart';
 import '../widgets/categories_item_scrolled_widget.dart';
 import '../widgets/food_campaign_card_widget.dart';
@@ -131,7 +134,14 @@ class _LandingHomePageState extends State<LandingHomePage> {
                       const SizedBox(
                         width: 20,
                       ),
-                      BannerScrolledWidget(scrollerPadding: scrollerPadding),
+                      InkWell(
+                        onTap: () async {
+                          final response = await ApiProvider().getWithoutBearer(bannerApiUrl);
+                          // BannerResponse.fromJson(response);
+                          debugPrint(response.toString());
+                        },
+                        child: BannerScrolledWidget(scrollerPadding: scrollerPadding),
+                      ),
                       BannerScrolledWidget(scrollerPadding: scrollerPadding),
                       BannerScrolledWidget(scrollerPadding: scrollerPadding),
                     ],
