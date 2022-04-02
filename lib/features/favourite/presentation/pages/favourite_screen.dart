@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/base_urls.dart';
-
 class FavouritePage extends StatefulWidget {
   const FavouritePage({Key? key}) : super(key: key);
   @override

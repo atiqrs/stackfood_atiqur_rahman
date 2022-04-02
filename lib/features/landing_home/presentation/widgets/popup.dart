@@ -34,7 +34,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> {
             size: renderBox.size,
             onAction: (x) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                duration: Duration(seconds: 1),
+                duration: const Duration(seconds: 1),
                 content: Text('Action => $x'),
               ));
             },
@@ -68,7 +68,7 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
 
   @override
   void initState() {
-    _animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+    _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 200));
     _animation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: _animationController, curve: Curves.easeOut));
     super.initState();
 
@@ -117,8 +117,8 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
                       onTap: () {},
                       child: Container(
                         width: double.maxFinite,
-                        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
-                        margin: EdgeInsets.only(left: 64),
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                        margin: const EdgeInsets.only(left: 64),
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(24), boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(.1),
@@ -133,17 +133,17 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
                               child: Row(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.all(6),
+                                    padding: const EdgeInsets.all(6),
                                     decoration: BoxDecoration(
-                                      color: Color(0xFFFFF0E3),
+                                      color: const Color(0xFFFFF0E3),
                                       borderRadius: BorderRadius.circular(24),
                                     ),
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.repeat,
                                       color: Colors.red,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 12,
                                   ),
                                   Text(
@@ -154,7 +154,7 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
                               ),
                             ),
                             //Edit workout
-                            SizedBox(
+                            const SizedBox(
                               height: 16,
                             ),
 
@@ -163,17 +163,17 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
                               child: Row(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.all(6),
+                                    padding: const EdgeInsets.all(6),
                                     decoration: BoxDecoration(
-                                      color: Color(0xFFE1E1FC),
+                                      color: const Color(0xFFE1E1FC),
                                       borderRadius: BorderRadius.circular(24),
                                     ),
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.edit,
                                       color: Color(0xFF3840A2),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 12,
                                   ),
                                   Text(
@@ -184,7 +184,7 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
                               ),
                             ),
                             //Share workout
-                            SizedBox(
+                            const SizedBox(
                               height: 16,
                             ),
 
@@ -193,17 +193,17 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
                               child: Row(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.all(6),
+                                    padding: const EdgeInsets.all(6),
                                     decoration: BoxDecoration(
-                                      color: Color(0xFFDDF3FD),
+                                      color: const Color(0xFFDDF3FD),
                                       borderRadius: BorderRadius.circular(24),
                                     ),
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.share,
                                       color: Color(0xFF0586C0),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 12,
                                   ),
                                   Text(
@@ -215,7 +215,7 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
                             ),
 
                             //Chat box
-                            SizedBox(
+                            const SizedBox(
                               height: 32,
                             ),
 
@@ -224,15 +224,15 @@ class _PopupMenuContentState extends State<PopupMenuContent> with SingleTickerPr
                               child: Container(
                                 width: double.maxFinite,
                                 height: 150,
-                                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFC2E3F6),
+                                  color: const Color(0xFFC2E3F6),
                                   borderRadius: BorderRadius.circular(16),
                                 ),
                                 child: Center(
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
+                                    children: const [
                                       Icon(
                                         Icons.messenger_outline_rounded,
                                         color: Color(0xff1e93ad),

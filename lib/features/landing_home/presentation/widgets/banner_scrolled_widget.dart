@@ -22,7 +22,7 @@ class BannerScrolledWidget extends StatelessWidget {
           height: size.width * .25,
           width: size.width * .7,
           color: primaryColor,
-          child: SizedBox(),
+          child: const SizedBox(),
         ),
       ),
     );

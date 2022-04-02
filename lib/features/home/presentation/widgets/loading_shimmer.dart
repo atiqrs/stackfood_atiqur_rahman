@@ -9,10 +9,6 @@ class LoadingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-    final screenHeight = mediaQuery.size.height;
-    final screenWidth = mediaQuery.size.width;
-
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
@@ -110,7 +106,7 @@ class LoadingPage extends StatelessWidget {
                         width: 100,
                         color: Colors.white,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         height: 15.0,
                         width: 50,
@@ -146,7 +142,7 @@ class LoadingPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Expanded(
             child: Shimmer.fromColors(
               baseColor: shimmerColor,

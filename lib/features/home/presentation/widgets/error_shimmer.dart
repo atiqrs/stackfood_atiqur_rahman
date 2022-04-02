@@ -16,32 +16,32 @@ class ErrorPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             errorMessage == 'Error During Communication: \nNo Internet connection'
-                ? Icon(
+                ? const Icon(
                     Icons.wifi_off,
                     size: 90,
                   )
-                : Icon(
+                : const Icon(
                     Icons.error_outline_sharp,
                     size: 90,
                   ),
             Text(
               errorMessage,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 18,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: Colors.white,
-                  side: BorderSide(
+                  side: const BorderSide(
                     color: Colors.red,
                   ),
                   shadowColor: Colors.grey,
                   elevation: 4),
-              child: Text('RETRY', style: TextStyle(color: Colors.black)),
+              child: const Text('RETRY', style: TextStyle(color: Colors.black)),
               onPressed: onRetryPressed,
             )
           ],
