@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home/main_home.dart';
+import 'features/home/presentation/pages/getting_started_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const MyHomePage(),
+      home: const GettingStartHome(),
     );
   }
 }

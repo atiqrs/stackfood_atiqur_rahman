@@ -1,5 +1,3 @@
-const ROOT = "https://stackfood-admin.6amtech.com";
+// root base url
 
-// APIs
-
-const CONFIG_API = '$ROOT/api/v1/config';
+const rootApiUrl = "https://stackfood-admin.6amtech.com";

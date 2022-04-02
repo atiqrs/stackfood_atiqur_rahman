@@ -16,6 +16,9 @@ const backgroundColor = Color.fromARGB(10, 158, 158, 158);
 const redColor = Color.fromARGB(255, 245, 3, 3);
 const greenColor = Color.fromARGB(255, 0, 184, 15);
 
+const shimmerColor = Color.fromRGBO(224, 224, 224, 1);
+const lowShimmerColor = Color.fromRGBO(245, 245, 245, 1);
+
 const mainTextStyle = TextStyle(
     color: mainTextColor,
     fontStyle: FontStyle.normal,

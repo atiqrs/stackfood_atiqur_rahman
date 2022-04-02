@@ -2,10 +2,10 @@ import 'package:atiqur_rahman/features/bookmark/presentation/pages/bookmark_scre
 import 'package:atiqur_rahman/features/cart/presentation/pages/cart_screen.dart';
 import 'package:atiqur_rahman/features/favourite/presentation/pages/favourite_screen.dart';
 import 'package:flutter/material.dart';
-import '../core/utils/constants.dart';
-import '../features/landing_home/presentation/pages/landing_home_screen.dart';
-import 'widget/nav_button.dart';
-import 'widget/drawer.dart';
+import '../../../../core/utils/constants.dart';
+import '../../../landing_home/presentation/pages/landing_home_screen.dart';
+import '../widgets/drawer.dart';
+import '../widgets/nav_button.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);

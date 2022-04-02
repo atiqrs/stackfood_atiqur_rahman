@@ -1,6 +1,12 @@
 import 'package:atiqur_rahman/core/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../../api/api.dart';
+import '../../../../api/api_provider.dart';
+import '../../../../core/base_urls.dart';
+import '../../../../core/utils/toast.dart';
+import '../../../home/data/models/configuration_response.dart';
 import '../widgets/banner_scrolled_widget.dart';
 import '../widgets/categories_item_scrolled_widget.dart';
 import '../widgets/food_campaign_card_widget.dart';
@@ -359,7 +365,6 @@ class _LandingHomePageState extends State<LandingHomePage> {
                     ),
                   ),
                 ),
-
                 SizedBox(height: size.width * 0.03),
               ],
             ),
