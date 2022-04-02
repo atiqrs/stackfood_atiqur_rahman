@@ -1,5 +1,5 @@
 import '../../../../api/api_provider.dart';
-import '../../../home/data/datasources/api_urls.dart';
+import '../datasources/api_urls.dart';
 import '../models/food_campaign_response.dart';
 
 class FoodCampaignRepository {
