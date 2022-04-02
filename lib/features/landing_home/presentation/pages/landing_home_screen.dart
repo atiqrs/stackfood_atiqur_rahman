@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../widgets/banner_scrolled_widget.dart';
 import '../widgets/categories_item_scrolled_widget.dart';
 import '../widgets/food_campaign_card_widget.dart';
-import '../widgets/new_off_arrive_widget.dart';
 import '../widgets/popular_food_button_widget.dart';
 import '../widgets/ratings_show_widget.dart';
 
@@ -16,6 +15,7 @@ class LandingHomePage extends StatefulWidget {
 
 class _LandingHomePageState extends State<LandingHomePage> {
   final TextEditingController searchController = TextEditingController();
+  // final GlobalKey<PopupMenuButtonState<int>> _popupMenuKey = GlobalKey();
 
   final String shopStreetText = '76A eighth evenue, New York, US';
   final String searchHintText = 'Search food or restaurent here...';
@@ -25,6 +25,8 @@ class _LandingHomePageState extends State<LandingHomePage> {
   final String popularFoodNearbyText = 'Popular Food Nearby';
   final String foodCampaignText = 'Food Campaign';
   final String restaurentsText = 'Restaurents';
+
+  bool fevo = false;
 
   final bool upIndexValue = true;
   final int rateValueOnPercentage = 30;
@@ -38,11 +40,15 @@ class _LandingHomePageState extends State<LandingHomePage> {
   final double demoPrice = 7.56;
   final double demoRating = 4.9;
 
+  final String restuarentsCategoriesText = 'American Cuisine,\nFast Food';
+
   final List<String> restaurentsFilterTextList = ['All', 'Take Away', 'Home Delivery'];
   final List<String> categoriesTextList = ['All', 'Coffee', 'Drink', 'Fast Food', 'Cake', 'Shusi'];
   final List<String> popularFoodTextList = ['Fried Noodles', 'Fried Noodles', 'Fried Noodles'];
   final List<String> foodCampaignTextList = ['Burger', 'Burger', 'Burger'];
   final List<int> ratings = [4, 4, 4];
+
+  // WhyFarther _selection = WhyFarther.harder;
 
   @override
   Widget build(BuildContext context) {
@@ -244,6 +250,116 @@ class _LandingHomePageState extends State<LandingHomePage> {
                     ],
                   ),
                 ),
+                SizedBox(height: size.width * 0.03),
+
+                // restaurents
+                Padding(
+                  padding: commonPadding,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(restaurentsText, style: mainTextStyle),
+                          PopupMenuButton(
+                            child: const Icon(
+                              Icons.filter_alt_outlined,
+                              color: secondaryMainTextColor,
+                              size: 34,
+                            ),
+                            itemBuilder: (context) {
+                              return <PopupMenuEntry<int>>[
+                                PopupMenuItem(
+                                  value: 1,
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                                const PopupMenuItem(child: Text('0'), value: 0),
+                                const PopupMenuItem(child: Text('1'), value: 1),
+                                const PopupMenuItem(child: Text('2'), value: 2),
+                              ];
+                              // return List.generate(5, (index) {
+                              //   return PopupMenuItem(
+                              //     child: Text('button no $index'),
+                              //   );
+                              // });
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+
+                // popupMenu(),
+                // scroller item
+                // for (var item in foodCampaignTextList)
+                Padding(
+                  padding: commonPadding,
+                  child: SizedBox(
+                    height: width * .25,
+                    width: double.infinity,
+                    child: Row(
+                      children: [
+                        // image show
+                        Expanded(
+                          flex: 2,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            // TODO: image link
+                            child: Container(color: primaryColor),
+                          ),
+                        ),
+                        // texts
+                        Expanded(
+                          flex: 3,
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Spacer(),
+                                Text(
+                                  foodCampaignTextList[0],
+                                  style: secondaryMainTextStyle,
+                                ),
+                                const Spacer(),
+                                Row(
+                                  children: [
+                                    Text(restuarentsCategoriesText, style: restaurentsCategoriesTextStyle),
+                                  ],
+                                ),
+                                const Spacer(),
+                                RatingsShow(ratings: ratings[0]),
+                                const Spacer(),
+                              ],
+                            ),
+                          ),
+                        ),
+                        // favorite add
+                        Expanded(
+                          flex: 1,
+                          child: IconButton(
+                            icon: fevo
+                                ? const Icon(Icons.favorite_rounded, color: primaryColor, size: 30)
+                                : const Icon(Icons.favorite_outline_rounded, color: secondayColor, size: 30),
+                            onPressed: () {
+                              setState(() {
+                                fevo = !fevo;
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
                 SizedBox(height: size.width * 0.03),
               ],
             ),

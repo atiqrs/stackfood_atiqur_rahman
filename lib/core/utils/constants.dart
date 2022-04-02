@@ -30,6 +30,13 @@ const secondaryMainTextStyle = TextStyle(
     fontSize: 18,
     letterSpacing: 0.15);
 
+const restaurentsCategoriesTextStyle = TextStyle(
+    color: secondayColor,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w500, //h1 - 400
+    fontSize: 14,
+    letterSpacing: 0.4);
+
 const currentPriceTextStyle = TextStyle(
     color: secondaryMainTextColor,
     fontStyle: FontStyle.normal,
@@ -81,3 +88,5 @@ const ratingTextStyle = TextStyle(
   fontSize: 18,
   letterSpacing: 0.15,
 );
+
+enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
